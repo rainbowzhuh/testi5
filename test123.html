@@ -5,7 +5,7 @@
 <title>Insert title here</title>
 </head>
 <body>
-<input type="file" capture="camera" accept="image/*" id="cameraInput" name="cameraInput" class="sign_file" style="display:none;"/>
+<input type="file" capture="camera" accept="image/*" id="cameraInput" name="cameraInput" class="sign_file" style=""/>
 <video id="video" width="640" height="480" autoplay></video>
 <button id="snap">Snap Photo</button>
 <canvas id="canvas" width="640" height="480"></canvas>
@@ -50,7 +50,7 @@ else{
  
    sel = document.getElementById('cameraInput');
    var f = sel.files[0];
-   f.click();
+   sel.click();
   
   sel.addEventListener('change', function (e) {
     alert("eee");
