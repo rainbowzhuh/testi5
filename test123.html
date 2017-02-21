@@ -16,29 +16,6 @@ var ctx=aCanvas.getContext('2d');
  
  
  
-      
-           window.addEventListener("DOMContentLoaded", function () {
-              // Grab elements, create settings, etc.
-              var canvas = document.getElementById("canvas"),
-             context = canvas.getContext("2d"),
-            video = document.getElementById("video"),
-             videoObj = { "video": true },
-             errBack = function (error) {
-                 if (error.PERMISSION_DENIED) {
-                    jAlert('用户拒绝了浏览器请求媒体的权限', '提示');
-                 } else if (error.NOT_SUPPORTED_ERROR) {
-                    jAlert('对不起，您的浏览器不支持拍照功能，请使用其他浏览器', '提示');
-                 } else if (error.MANDATORY_UNSATISFIED_ERROR) {
-                    jAlert('指定的媒体类型未接收到媒体流', '提示');
-                  } else {
-                     jAlert('系统未能获取到摄像头，请确保摄像头已正确安装。或尝试刷新页面，重试', '提示');
-                }
-             };
-  
- 
-              var message = "为了获得更准确的测试结果，请尽量将面部置于红框中，然后进行拍摄、扫描。 点击“OK”后，请在屏幕上方出现的提示框选择“允许”，以开启摄像功能";
-           })
- 
  
  
  
@@ -55,8 +32,17 @@ navigator.getUserMedia = navigator.getUserMedia || (navigator.getUserMedia = nav
 if (navigator.getUserMedia) {
   alert("aaa");
 }
-else{
+else if(navigator.webkitGetUserMedia){
  alert("bbb");
+}
+else if(navigator.mozGetUserMedia){
+ alert("ccc");
+}
+else if(navigator.msGetUserMedia){
+ alert("ddd");   
+} 
+else{
+ alert("eee");
 }
  
 navigator.getUserMedia({video:true,audio: false}, gotStream, noStream);//参数1获取用户打开权限；参数二成功打开后调用，并传一个视频流对象，参数三打开失败后调用，传错误信息
