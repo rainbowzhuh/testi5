@@ -1,82 +1,34 @@
-<!DOCTYPE HTML>
-<html>
-<head>
-<meta http-equiv="Content-Type" content="text/html; charset=gb2312">
-<title>camera</title>
-<script type="text/javascript" src="https://rainbowzhuh.github.io/testi5/jquery.js"></script>
-</head>
-
-<body>
-    <div id="contentHolder">      
-      <video id="video" width="320" height="320" autoplay></video>      
-      <button id="snap" style="display:none"> 拍照</button>        
-      <canvas style="display:none" id="canvas" width="320" height="320"></canvas>
-    </div>
-<script language="javascript">     
-//判断浏览器是否支持HTML5 Canvas           
-window.onload = function () {         
-     try {                  
-//动态创建一个canvas元 ，并获取他2Dcontext。如果出现异常则表示不支持                   document.createElement("canvas").getContext("2d");        
-           document.getElementByIdx("support").innerHTML = "浏览器支持HTML5 CANVAS";         
-      }         
-     catch (e) {           
-        document.getElementByIdx("support").innerHTML = "浏览器不支持HTML5 CANVAS";      
-        }               
-     };               
-     //这段代 主要是获取摄像头的视频流并显示在Video 签中           
-window.addEventListener("DOMContentLoaded", function () {            
-   var canvas = document.getElementByIdx("canvas");             
-     context = canvas.getContext("2d"),               
-   video = document.getElementByIdx("video"),         
-         videoObj = { "video": true },            
-      errBack = function (error) {           
-            console.log("Video capture error: ", error.code);   
-               };               
-    //navigator.getUserMedia这个写法在Opera中好像是navigator.getUserMedianow      
-        if (navigator.getUserMedia) {     
-              navigator.getUserMedia(videoObj, function (stream) {
-                       video.src = stream;               
-       video.play();      
-             }, errBack);           
-    } else if (navigator.webkitGetUserMedia) {        
-           navigator.webkitGetUserMedia(videoObj, function (stream) {         
-             video.src = window.webkitURL.createObjectURL(stream);           
-            video.play();           
-        }, errBack);           
-    }         
-      //这个是拍照按钮的事件，         
-     $("#snap").click(function () {         
-         context.drawImage(video, 0, 0, 320, 320);     
-              //CatchCode();           
-    });           
-          }, false);           
-          //定时器         
-  var interval = setInterval(CatchCode, "300");      
-                         //这个是 刷新上 图像的        
-   function CatchCode() {        
-       $("#snap").click();
-//实际运用可不写，测试代 ， 为单击拍照按钮就获取了当前图像，有其他用途   
-           var canvans = $("#canvas");
-//获取浏览器页面的画布对象                       
-   //以下开始编 数据   
-                                  var imgData = canvans.toDataURL();
-//将图像转换为base64数据
-               var base64Data = imgData.substr(22);
-//在前端截取22位之后的字符串作为图像数据      
-                            //开始异步上            
-   $.post("uploadImgCode.ashx", { "img": base64Data }, function (data, status) {      
-             if (status == "success") {                 
-      if (data == "OK") {               
-           alert("二维 已经解析");                  
-    }                    
-   else {              
-             // alert(data);         
-             }         
-         }     
-              else {   
-                    alert("数据上 失败");                 
-  }               }, "text");           
-          }      
-</script>
-</body>
-</html>
+<!DOCTYPE html>  
+    <html>  
+    <head>  
+        <title>html5调用摄像头实现拍照</title>  
+        <meta charset="utf-8">  
+        <meta name="viewport" content="width=device-width, initial-scale=1">  
+    </head>  
+    <body>  
+    <video id="video" autoplay=""style='width:640px;height:480px'></video>  
+    <button id="paizhao">拍照</button>   
+    <canvas id="canvas" width="640" height="480"></canvas>  
+    <script type="text/javascript">  
+        var video=document.getElementById("video");  
+        var context=canvas.getContext("2d");  
+        var errocb=function(){  
+            console.log("sth srong");  
+        }  
+        if(navigator.getUserMedia){  
+            navigator.getUserMedia({"video":true},function(stream){  
+                video.src=stream;  
+                video.play();  
+            },errocb);  
+        }else if(navigator.webkitGetUserMedia){  
+            navigator.webkitGetUserMedia({"video":true},function(stream){  
+                video.src=window.webkitURL.createObjectURL(stream);  
+                video.play();  
+            },errocb);  
+        }  
+        document.getElementById("paizhao").addEventListener("click",function(){  
+            context.drawImage(video,0,0,640,480);  
+        });  
+    </script>  
+    </body>  
+    </html>
