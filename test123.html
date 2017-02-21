@@ -89,6 +89,29 @@ document.getElementById("snap").addEventListener("click", function() {
  
 ctx.drawImage(aVideo, 0, 0, 640, 480);//将获取视频绘制在画布上
 });
+ 
+ 
+ 
+ 
+ function receivedData() {
+     // readAsDataURL is finished - add URI to IMG tag src
+     var canvas = document.getElementById("canvas");
+     var context = canvas.getContext("2d");
+     var imgtag = document.getElementById('imgtag'); // get reference to img tag
+     imgtag.src = fr.result;
+     $('#cream_loading').toggle();
+ 
+     try {
+         setTimeout(function () {
+             context.drawImage(imgtag, 0, 0, 640, 480);
+             convertCanvasToImage();
+         }, 500);
+ 
+     }
+     catch (err) {
+         alert(err);
+     }
+ }
 </script>
 
 </body>
