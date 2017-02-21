@@ -8,25 +8,20 @@
 <device type="media" onchange="update(this.data)"></device>
 <video autoplay></video>
 <script type="text/javascript">
-var errorCallback = function(e) {
-    console.log('Reeeejected!', e);
-  };
-navigator.getUserMedia  = navigator.getUserMedia ||
-                          navigator.webkitGetUserMedia ||
-                          navigator.mozGetUserMedia ||
-                          navigator.msGetUserMedia;
+window.AudioContext = window.AudioContext ||
+                      window.webkitAudioContext;
 
- var video = document.querySelector('video');
+var context = new AudioContext();
 
-if (navigator.getUserMedia) {
-    alert("aaa");
-  navigator.getUserMedia({audio: true, video: true}, function(stream) {
-    video.src = window.URL.createObjectURL(stream);
-  }, errorCallback);
-} else {
-    alert("bbb");
-  video.src = 'somevideo.webm'; // fallback.
-}
+navigator.getUserMedia({audio: true}, function(stream) {
+  var microphone = context.createMediaStreamSource(stream);
+  var filter = context.createBiquadFilter();
+
+  // microphone -> filter -> destination.
+  microphone.connect(filter);
+  filter.connect(context.destination);
+}, errorCallback);
+
 
 </script>
 
