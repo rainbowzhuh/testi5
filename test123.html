@@ -18,17 +18,12 @@ navigator.webkitGetUserMedia ||
 navigator.mozGetUserMedia ||
 navigator.msGetUserMedia;//获取媒体对象（这里指摄像头）
  
-if(navigator.getUserMedia) {
-  alert("aaa");
-}
-else{
-  alert("bbb");
-}
-navigator.getUserMedia({video:true}, gotStream, noStream);//参数1获取用户打开权限；参数二成功打开后调用，并传一个视频流对象，参数三打开失败后调用，传错误信息
+
+navigator.getUserMedia({video:true,audio: false}, gotStream, noStream);//参数1获取用户打开权限；参数二成功打开后调用，并传一个视频流对象，参数三打开失败后调用，传错误信息
  
 function gotStream(stream) {
  
- alert("123");
+ alert("123" + navigator.mozGetUserMedia);
  
 video.src = URL.createObjectURL(stream);
 video.onerror = function () {
