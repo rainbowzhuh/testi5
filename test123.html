@@ -5,7 +5,7 @@
 <title>Insert title here</title>
 </head>
 <body>
-<input type="file" capture="camera" accept="image/*" id="cameraInput" name="cameraInput" class="sign_file"/>
+<input type="file" capture="camera" accept="image/*" id="cameraInput" name="cameraInput" class="sign_file" style="display:none;"/>
 <video id="video" width="640" height="480" autoplay></video>
 <button id="snap">Snap Photo</button>
 <canvas id="canvas" width="640" height="480"></canvas>
@@ -47,10 +47,15 @@ else{
  alert(userAgent);
  if (userAgent.indexOf("Safari") > -1 && userAgent.indexOf("Oupeng") == -1 && userAgent.indexOf("360 Aphone") == -1) {
     
+ 
    sel = document.getElementById('cameraInput');
    var f = sel.files[0];
+   f.click();
   
-  
+  sel.addEventListener('change', function (e) {
+    alert("eee");
+   
+  });
  }
  else{
     alert("fff");
