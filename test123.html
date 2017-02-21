@@ -43,17 +43,14 @@ else if(navigator.msGetUserMedia){
 } 
 else{
  var userAgent = navigator.userAgent;
+ alert(userAgent);
  if (userAgent.indexOf("Safari") > -1 && userAgent.indexOf("Oupeng") == -1 && userAgent.indexOf("360 Aphone") == -1) {
-    var sel;
-   sel.addEventListener('change', function (e) {
-                         var f = sel.files[0]; // get selected file (camera capture)
-                         fr = new FileReader();
-                         fr.onload = receivedData; // add onload event
-
-                        fr.readAsDataURL(f); // get captured image as data URI
-                    });
+    alert("eee");
  }
- alert("eee");
+ else{
+    alert("fff");
+ }
+ 
 }
  
 navigator.getUserMedia({video:true,audio: false}, gotStream, noStream);//参数1获取用户打开权限；参数二成功打开后调用，并传一个视频流对象，参数三打开失败后调用，传错误信息
