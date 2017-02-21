@@ -42,6 +42,17 @@ else if(navigator.msGetUserMedia){
  alert("ddd");   
 } 
 else{
+ var userAgent = navigator.userAgent;
+ if (userAgent.indexOf("Safari") > -1 && userAgent.indexOf("Oupeng") == -1 && userAgent.indexOf("360 Aphone") == -1) {
+    var sel;
+   sel.addEventListener('change', function (e) {
+                         var f = sel.files[0]; // get selected file (camera capture)
+                         fr = new FileReader();
+                         fr.onload = receivedData; // add onload event
+
+                        fr.readAsDataURL(f); // get captured image as data URI
+                    });
+ }
  alert("eee");
 }
  
