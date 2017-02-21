@@ -56,7 +56,7 @@ window.addEventListener("DOMContentLoaded", function () {
    function CatchCode() {        
        $("#snap").click();
 //实际运用可不写，测试代 ， 为单击拍照按钮就获取了当前图像，有其他用途   
-           var canvans = document.getElementByIdx("canvas");
+           var canvans = $("#canvas");
 //获取浏览器页面的画布对象                       
    //以下开始编 数据   
                                   var imgData = canvans.toDataURL();
