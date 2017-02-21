@@ -55,7 +55,8 @@ else{
   
   
   sel.addEventListener('click', function (e) {
-    var f = sel.files[0];
+    var f = sel.files[0].html();
+    alert(f);
    
   });
  }
