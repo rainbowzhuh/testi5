@@ -19,10 +19,12 @@ navigator.getUserMedia  = navigator.getUserMedia ||
  var video = document.querySelector('video');
 
 if (navigator.getUserMedia) {
+    alert("aaa");
   navigator.getUserMedia({audio: true, video: true}, function(stream) {
     video.src = window.URL.createObjectURL(stream);
   }, errorCallback);
 } else {
+    alert("bbb");
   video.src = 'somevideo.webm'; // fallback.
 }
 
