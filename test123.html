@@ -84,9 +84,9 @@
       var canvas = document.getElementById("canvas");
       var context = canvas.getContext("2d");
       var imgtag = document.getElementById('imgtag'); // get reference to img tag
-      imgtag.src = fr.result;
+      //imgtag.src = fr.result;
       
-      /*try {
+      try {
          setTimeout(function () {
              context.drawImage(imgtag, 0, 0, 320, 320);
              convertCanvasToImage();
@@ -95,7 +95,7 @@
      }
      catch (err) {
          alert(err);
-     } */
+     } 
     }
     
     function convertCanvasToImage(canvas){
