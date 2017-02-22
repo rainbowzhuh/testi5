@@ -12,16 +12,22 @@
     <a href="javascript:clickTest()" style="">点击测试</a>  
   </div>
   <!--<video id="video" width="640" height="480" autoplay></video>
-  <button id="snap">Snap Photo</button>
-  <canvas id="canvas" width="640" height="480"></canvas>-->
+  <button id="snap">Snap Photo</button>-->
+  <canvas id="canvas" width="640" height="480"></canvas>
   <script type="text/javascript">
     function clickTest(){
       $("#cameraInput").click();
     }
     
     window.addEventListener("DOMContentLoaded", function () {
-     alert("***");
-    
+            alert("***");
+              var canvas = document.getElementById("canvas"),
+              context = canvas.getContext("2d"),
+              video = document.getElementById("video"),
+              videoObj = { "video": true },
+              errBack = function (error) {
+                alert(error);
+              }
     })
   </script>  
 </body>
