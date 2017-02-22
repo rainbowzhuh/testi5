@@ -14,7 +14,7 @@
   <!--<video id="video" width="640" height="480" autoplay></video>
   <button id="snap">Snap Photo</button>-->
   <canvas id="canvas" width="640" height="480"></canvas>
-  <img src="" id="imgtag" style="display:none"/>
+  <!--<img src="" id="imgtag" style="display:none"/>-->
   <script type="text/javascript">
     var sel, fr;
     function clickTest(){
@@ -53,14 +53,14 @@
         else{
           if(userAgent.indexOf("Safari") > -1 && userAgent.indexOf("Oupeng") == -1 && userAgent.indexOf("360 Aphone") == -1) {
             alert("eee");
-            //sel.addEventListener('change', function (e) {
+            sel.addEventListener('change', function (e) {
               alert("--------");
               
               var f = sel.files[0];
               fr = new FileReader();
               fr.onload = receivedData;
               fr.readAsDataURL(f);
-            //})
+            })
           
             $('#imgtag').show();
             clickTest();
