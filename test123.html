@@ -37,7 +37,21 @@
         
        
         var userAgent = navigator.userAgent;
-        if (userAgent.indexOf("Safari") > -1 && userAgent.indexOf("Oupeng") == -1 && userAgent.indexOf("360 Aphone") == -1) {
+        if (navigator.getUserMedia) {
+           alert("aaa");
+        
+        }
+        else if(navigator.webkitGetUserMedia){
+           alert("bbb");
+        }
+        else if(navigator.mozGetUserMedia){
+            alert("ccc");    
+        }  
+        else if(navigator.msGetUserMedia){
+            alert("ddd");
+        }
+        else{
+          if(userAgent.indexOf("Safari") > -1 && userAgent.indexOf("Oupeng") == -1 && userAgent.indexOf("360 Aphone") == -1) {
             sel.addEventListener('change', function (e) {
               alert("--------");
               
@@ -53,6 +67,7 @@
         else{
           alert("sorrry,error");
         }
+        } 
         });
       }
       catch(err){
