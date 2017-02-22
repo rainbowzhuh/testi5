@@ -103,14 +103,19 @@
     function gotStream(stream) {
       alert("正在启动摄像头，请稍等……");
       var video=document.getElementById("video"); 
-      var canvas = document.getElementById("canvas");
       
-      video.src=stream;  
+      if (navigator.mozGetUserMedia) {
+          video.mozSrcObject = stream;
+        } else {
+          var vendorURL = window.URL || window.webkitURL;
+          video.src = vendorURL.createObjectURL(stream);
+        }
+      
       video.play();  
     }
     
-    function noStream(){
-      alert("对不起，未检测到摄像头，请确认");
+    function noStream(err){
+      alert("An error occured! " + err);
     }
   </script>  
 </body>
