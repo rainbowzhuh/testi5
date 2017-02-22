@@ -13,7 +13,7 @@
   </div>
   <!--<video id="video" width="640" height="480" autoplay></video>
   <button id="snap">Snap Photo</button>-->
-  <canvas id="canvas" width="640" height="480"></canvas>
+  <canvas id="canvas" width="640" height="480" style="display:none;"></canvas>
   <img src="" id="imgtag" style="display:none"/>
   <script type="text/javascript">
     var sel, fr;
@@ -84,7 +84,7 @@
       var canvas = document.getElementById("canvas");
       var context = canvas.getContext("2d");
       var imgtag = document.getElementById('imgtag'); // get reference to img tag
-      //imgtag.src = fr.result;
+      imgtag.src = fr.result;
       
       try {
          setTimeout(function () {
