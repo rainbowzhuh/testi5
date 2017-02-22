@@ -11,7 +11,7 @@
   <div style="width:100%;font-size:60px;text-align:center;margin-top:50px;">
     <a href="javascript:clickTest()" style="">点击测试</a>  
   </div>
-  <video id="video" width="640" height="480" autoplay=""></video>
+  <video id="video" width="640" height="480" autoplay="" style="display:none;"></video>
   <!--<button id="snap">Snap Photo</button>-->
   <canvas id="canvas" width="640" height="480" ></canvas>
   <img src="" id="imgtag" style="display:none" width="640" />
@@ -40,7 +40,7 @@
        
         var userAgent = navigator.userAgent;
         if (navigator.getUserMedia) {
-              navigator.getUserMedia({video:true,audio: false}, gotStream, noStream);
+              navigator.getUserMedia({video:true}, gotStream, noStream);
         }
         else{
           if(userAgent.indexOf("Safari") > -1 && userAgent.indexOf("Oupeng") == -1 && userAgent.indexOf("360 Aphone") == -1) {
@@ -106,6 +106,10 @@
       
       video.src=stream;  
       video.play();  
+    }
+    
+    function noStream(){
+      alert("对不起，当前浏览器不支持，请您确认");
     }
   </script>  
 </body>
