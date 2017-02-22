@@ -25,7 +25,6 @@
       try{
         sel = document.getElementById('cameraInput');
         window.addEventListener("DOMContentLoaded", function () {
-            alert("start");
               var canvas = document.getElementById("canvas"),
               context = canvas.getContext("2d"),
               video = document.getElementById("video"),
@@ -52,9 +51,7 @@
         }
         else{
           if(userAgent.indexOf("Safari") > -1 && userAgent.indexOf("Oupeng") == -1 && userAgent.indexOf("360 Aphone") == -1) {
-            alert("eee");
             sel.addEventListener('change', function (e) {
-              alert("--------");
               
               var f = sel.files[0];
               fr = new FileReader();
@@ -79,14 +76,12 @@
     });
     
     function receivedData(){
-      alert("///");
       
       var canvas = document.getElementById("canvas");
       var context = canvas.getContext("2d");
       var imgtag = document.getElementById('imgtag'); // get reference to img tag
       imgtag.src = fr.result;
       
-      alert("*8888*");
       
       try {
          setTimeout(function () {
