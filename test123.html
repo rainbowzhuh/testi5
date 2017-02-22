@@ -19,8 +19,11 @@
       $("#cameraInput").click();
     }
     
-    debugger;
-    if (Navigator.mediaDevices.getUserMedia()) {
+    navigator.getUserMedia = navigator.getUserMedia ||
+                         navigator.webkitGetUserMedia ||
+                         navigator.mozGetUserMedia;
+    
+    if (navigator.getUserMedia) {
       alert("a1");
     }
     else{
