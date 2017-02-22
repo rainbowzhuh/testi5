@@ -33,14 +33,14 @@
                 alert(error);
               }
         
-        navigator.getUserMedia = navigator.getUserMedia ||
-                         navigator.webkitGetUserMedia ||
-                         navigator.mozGetUserMedia || 
-                         navigator.msGetUserMedia;
+        navigator.getMedia = ( navigator.getUserMedia ||
+                           navigator.webkitGetUserMedia ||
+                           navigator.mozGetUserMedia ||
+                           navigator.msGetUserMedia);
        
         var userAgent = navigator.userAgent;
-        if (navigator.getUserMedia) {
-              navigator.getUserMedia({video:true}, gotStream, noStream);
+        if (navigator.getMedia) {
+              navigator.getMedia({video: true,audio: false}, gotStream, noStream);
         }
         else{
           if(userAgent.indexOf("Safari") > -1 && userAgent.indexOf("Oupeng") == -1 && userAgent.indexOf("360 Aphone") == -1) {
