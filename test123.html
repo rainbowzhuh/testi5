@@ -19,16 +19,10 @@
       $("#cameraInput").click();
     }
     
-    navigator.getUserMedia = navigator.getUserMedia ||
-                         navigator.webkitGetUserMedia ||
-                         navigator.mozGetUserMedia;
+    window.addEventListener("DOMContentLoaded", function () {
+     alert("***");
     
-    if (navigator.getUserMedia) {
-      alert("a1");
-    }
-    else{
-      alert("b2");
-    }
+    })
   </script>  
 </body>
 </html>  
