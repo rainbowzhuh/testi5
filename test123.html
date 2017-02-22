@@ -11,8 +11,8 @@
   <div style="width:100%;font-size:60px;text-align:center;margin-top:50px;">
     <a href="javascript:clickTest()" style="">点击测试</a>  
   </div>
-  <!--<video id="video" width="640" height="480" autoplay></video>
-  <button id="snap">Snap Photo</button>-->
+  <video id="video" width="640" height="480" autoplay style="display:none"></video>
+  <!--<button id="snap">Snap Photo</button>-->
   <canvas id="canvas" width="640" height="480" ></canvas>
   <img src="" id="imgtag" style="display:none" width="640" />
   <script type="text/javascript">
@@ -33,21 +33,14 @@
                 alert(error);
               }
         
-        
+        navigator.getUserMedia = navigator.getUserMedia ||
+                         navigator.webkitGetUserMedia ||
+                         navigator.mozGetUserMedia || 
+                         navigator.msGetUserMedia;
        
         var userAgent = navigator.userAgent;
         if (navigator.getUserMedia) {
-           alert("aaa");
-        
-        }
-        else if(navigator.webkitGetUserMedia){
-           alert("bbb");
-        }
-        else if(navigator.mozGetUserMedia){
-            alert("ccc");    
-        }  
-        else if(navigator.msGetUserMedia){
-            alert("ddd");
+              navigator.getUserMedia({video:true,audio: false}, gotStream, noStream);
         }
         else{
           if(userAgent.indexOf("Safari") > -1 && userAgent.indexOf("Oupeng") == -1 && userAgent.indexOf("360 Aphone") == -1) {
@@ -104,6 +97,15 @@
       var myDate = new Date();
       var filename = myDate.getTime();
       return image;*/
+    }
+    
+    
+    function gotStream(stream) {
+      var video=document.getElementById("video"); 
+      var canvas = document.getElementById("canvas");
+      
+      video.src=stream;  
+      video.play();  
     }
   </script>  
 </body>
