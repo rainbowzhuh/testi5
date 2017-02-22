@@ -4,12 +4,19 @@
 <head>
 <meta charset="UTF-8">
 <title>Insert title here</title>
-<script type="text/javascript" src=""></script>  
+<script type="text/javascript" src="https://rainbowzhuh.github.io/testi5/jquery.js"></script>  
 </head>
 <body>
-<input type="file" capture="camera" accept="image/*" id="cameraInput" name="cameraInput" class="sign_file" style="display:none"/>
-<!--<video id="video" width="640" height="480" autoplay></video>
-<button id="snap">Snap Photo</button>
-<canvas id="canvas" width="640" height="480"></canvas>-->
+  <input type="file" capture="camera" accept="image/*" id="cameraInput" name="cameraInput" class="sign_file" style="display:none"/>
+  <a href="javascript:clickTest()" style="">点击测试</a>  
+  <!--<video id="video" width="640" height="480" autoplay></video>
+  <button id="snap">Snap Photo</button>
+  <canvas id="canvas" width="640" height="480"></canvas>-->
+  <script type="text/javascript">
+    function clickTest(){
+      $("#cameraInput").click();
+    }
+
+  </script>  
 </body>
 </html>  
