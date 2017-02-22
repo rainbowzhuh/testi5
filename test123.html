@@ -14,13 +14,18 @@
   <!--<video id="video" width="640" height="480" autoplay></video>
   <button id="snap">Snap Photo</button>-->
   <canvas id="canvas" width="640" height="480"></canvas>
+  <img src="" id="imgtag" style="display:none"/>
   <script type="text/javascript">
+    var sel, fr;
     function clickTest(){
       $("#cameraInput").click();
     }
     
-    window.addEventListener("DOMContentLoaded", function () {
-            alert("***");
+    $(document).ready(function(){
+      try{
+        sel = document.getElementById('cameraInput');
+        window.addEventListener("DOMContentLoaded", function () {
+            alert("*----*");
               var canvas = document.getElementById("canvas"),
               context = canvas.getContext("2d"),
               video = document.getElementById("video"),
@@ -28,7 +33,59 @@
               errBack = function (error) {
                 alert(error);
               }
-    })
+        });
+        
+        
+        var userAgent = navigator.userAgent;
+        if (userAgent.indexOf("Safari") > -1 && userAgent.indexOf("Oupeng") == -1 && userAgent.indexOf("360 Aphone") == -1) {
+            sel.addEventListener('change', function (e) {
+              var f = sel.files[0];
+              fr = new FileReader();
+              fr.onload = receivedData;
+              fr.readAsDataURL(f);
+            })
+          
+            $('#imgtag').show();
+            clickTest();
+        }
+        else{
+          alert("sorrry,error");
+        }
+        
+      }
+      catch(err){
+        alert("catch err");
+      }
+      
+    
+    });
+    
+    function receivedData(){
+      var canvas = document.getElementById("canvas");
+      var context = canvas.getContext("2d");
+      var imgtag = document.getElementById('imgtag'); // get reference to img tag
+      imgtag.src = fr.result;
+      
+      try {
+         setTimeout(function () {
+             context.drawImage(imgtag, 0, 0, 640, 480);
+             convertCanvasToImage();
+         }, 500);
+ 
+     }
+     catch (err) {
+         alert(err);
+     } 
+    }
+    
+    function readAsDataURL(canvas){
+      var image = new Image();
+      image.src = document.getElementById("canvas").toDataURL("image/png");
+      var b64 = image.src.substring(22);
+      var myDate = new Date();
+      var filename = myDate.getTime();
+      return image;
+    }
   </script>  
 </body>
 </html>  
