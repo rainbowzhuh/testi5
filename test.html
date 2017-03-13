@@ -30,18 +30,19 @@ p { height: 100px; text-align: center;
 }
 </style>
 <script>
-$(function () {
-	$(window).load(function () {
-		var winWidth = $(window).width();
-		alert(winWidth + "***");
-		//$("p").html("window-width: " + winWidth + "px");
+	$(document).ready(function(){
+		$(window).load(function () {
+			var winWidth = $(window).width();
+			alert(winWidth + "***");
+			//$("p").html("window-width: " + winWidth + "px");
+		})
+		$(window).resize(function () {
+			var winWidth = $(window).width();
+			alert(winWidth + "**");
+			//$("p").html("window-width: " + winWidth + "px");
+		})
+	
 	})
-	$(window).resize(function () {
-		var winWidth = $(window).width();
-		alert(winWidth + "**");
-		//$("p").html("window-width: " + winWidth + "px");
-	})
-})
 </script>
 </head>
 
