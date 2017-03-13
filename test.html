@@ -33,11 +33,13 @@ p { height: 100px; text-align: center;
 $(function () {
 	$(window).load(function () {
 		var winWidth = $(window).width();
-		$("p").html("window-width: " + winWidth + "px");
+		alert(winWidth + "***");
+		//$("p").html("window-width: " + winWidth + "px");
 	})
 	$(window).resize(function () {
 		var winWidth = $(window).width();
-		$("p").html("window-width: " + winWidth + "px");
+		alert(winWidth + "**");
+		//$("p").html("window-width: " + winWidth + "px");
 	})
 })
 </script>
@@ -50,10 +52,10 @@ $(function () {
 <script>
 var _hmt = _hmt || [];
 (function() {
-  var hm = document.createElement("script");
+  /*var hm = document.createElement("script");
   hm.src = "http://hm.baidu.com/hm.js?63ba884cf404de06c7d8dcc2fc46343e";
   var s = document.getElementsByTagName("script")[0]; 
-  s.parentNode.insertBefore(hm, s);
+  s.parentNode.insertBefore(hm, s);*/
 })();
 </script>
 </div>
