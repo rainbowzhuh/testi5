@@ -1,20 +1,61 @@
 
 <!DOCTYPE html>
-<html lang="zh-CN">
+<html>
 <head>
-<meta charset="utf-8">
-<meta name="robots" content="all">
-<meta name="author" content="test">
-<meta name="Copyright" content="Test">
-<meta name="Description" content="">
-<meta name="viewport" content="width=device-width, initial-scale=1" />
-<meta name="Keywords" content="">
-<title></title>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+<title>响应式断点</title>
+<link href="http://greenzorro.github.io/colacdn/assets/css/reset.css" rel="stylesheet" type="text/css" />
+<link href="http://greenzorro.github.io/colacdn/assets/css/global.css" rel="stylesheet" type="text/css" />
+<script src="http://greenzorro.github.io/colacdn/assets/js/jquery-latest.js"></script>
+<style type="text/css">
+p { height: 100px; text-align: center;
+	transition:height 0.5s, line-height 0.5s;
+}
+/*less than 533px, phone_portrait*/
+@media only screen and (max-width:33.36em){
+	p { height: 250px; line-height: 250px; background: #ccc; }
+}
+/*from 534px to 767px, phone_landscape*/
+@media only screen and (min-width:33.37em) and (max-width:47.99em){
+	p { height: 200px; line-height: 200px; background: #dfdfdf; }
+}
+/*from 768px to 1199px, pad*/
+@media only screen and (min-width:48em) and (max-width:74.99em){
+	p { height: 150px; line-height: 150px; background: #eee; }
+}
+/*over 1200px, pc*/
+@media only screen and (min-width:75em){
+	p { height: 100px; line-height: 100px; background: #f5f5f5; }
+}
+</style>
+<script>
+$(function () {
+	$(window).load(function () {
+		var winWidth = $(window).width();
+		$("p").html("window-width: " + winWidth + "px");
+	})
+	$(window).resize(function () {
+		var winWidth = $(window).width();
+		$("p").html("window-width: " + winWidth + "px");
+	})
+})
+</script>
 </head>
+
 <body>
-  <div class="index">
-    <input type="date" name="" class="" />
-  </div>
-  
+<p></p>
+
+<div style="display:none;">
+<script>
+var _hmt = _hmt || [];
+(function() {
+  var hm = document.createElement("script");
+  hm.src = "http://hm.baidu.com/hm.js?63ba884cf404de06c7d8dcc2fc46343e";
+  var s = document.getElementsByTagName("script")[0]; 
+  s.parentNode.insertBefore(hm, s);
+})();
+</script>
+</div>
 </body>
 </html>
