@@ -1952,7 +1952,8 @@ text-overflow: ellipsis;
 /**错误页面end*/
 
 /**横屏*/
-@media all and ( min-width:1024px){
+@media all and (orientation : landscape) and (min-width:768px)
+{
 	.contact_html_info {
 		font-family: 微软雅黑;
 		font-size: 12px;
@@ -1966,8 +1967,20 @@ text-overflow: ellipsis;
 	    position:absolute;
 
 	}
+
+	.coupon_html_info{
+		font-family: 微软雅黑;
+		font-size: 12px;
+		color: #989898;
+		text-align: center;
+		width: 100%;
+		background: #f88420;
+		bottom: 60px;
+		padding-top: 10px;
+		position: absolute;
+	}
 }
-@media all and (orientation : landscape )
+@media all and (orientation : landscape ) and (max-width:768px)
 {
 	.contact_space{
 		background: #ebebeb;
