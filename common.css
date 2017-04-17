@@ -1952,7 +1952,7 @@ text-overflow: ellipsis;
 /**错误页面end*/
 
 /**横屏*/
-@media all and (min-width:1024px){
+@media all and ( min-width:1024px){
 	.contact_html_info {
 		font-family: 微软雅黑;
 		font-size: 12px;
@@ -1967,7 +1967,7 @@ text-overflow: ellipsis;
 
 	}
 }
-@media all and (orientation : landscape and max-width:768px )
+@media all and (orientation : landscape )
 {
 	.contact_space{
 		background: #ebebeb;
@@ -2002,7 +2002,7 @@ text-overflow: ellipsis;
 }
 
 /**竖屏*/
-@media all and (orientation : portrait and max-width:768px )
+@media all and (orientation : portrait  )
 {
 	.contact_space{
 		background: #ebebeb;
