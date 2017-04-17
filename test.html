@@ -137,7 +137,7 @@ function showBottom(){
 		var winWidth = $(window).width();
 		var winHeight = $(window).height();//手机高度
 		var htmlHeight = $(".get_coupon").height();//页面html高度
-		if(winHeight - htmlHeight == 0){
+		if(winHeight - htmlHeight <= 0){
 			$(".coupon_html_info").css("position","relative");
 		}
 		else{
