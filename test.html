@@ -1,20 +1,6 @@
-<%@ page language="java" import="java.util.*" pageEncoding="utf-8"%>
-<%@ taglib uri="/WEB-INF/tlds/struts-html.tld" prefix="html"%>
-<%@ taglib uri="/WEB-INF/tlds/struts-bean.tld" prefix="bean"%>
-<%@ taglib uri="/WEB-INF/tlds/struts-logic.tld" prefix="logic"%>
-<%@ taglib uri="/WEB-INF/tlds/struts-edp.tld" prefix="rutai"%>
-<%@ include file="../wxbase/wxBase.jsp"%>
-<%
-String context = request.getContextPath();
-String fullContext = request.getScheme()+"://"+request.getServerName()+":"+request.getServerPort()+context+"/";
-String latitude="31.22791" ;
-String longitude="121.3512";
-%>
-
 <!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
 <html class="coupon_html">
   <head>
-    <base href="<%=fullContext%>">
     
     <title>我的卡券</title>
     
