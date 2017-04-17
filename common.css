@@ -1967,7 +1967,7 @@ text-overflow: ellipsis;
 		background: #ebebeb;
 		bottom: 60px;
 		padding-top: 10px;
-		position: relative;
+		/*position: relative;*/
 	}
 
 	.coupon_html_info{
