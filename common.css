@@ -1952,7 +1952,22 @@ text-overflow: ellipsis;
 /**错误页面end*/
 
 /**横屏*/
-@media all and (orientation : landscape)
+@media all and (min-width:1024px){
+	.contact_html_info {
+		font-family: 微软雅黑;
+		font-size: 12px;
+		color: #989898;
+		text-align: center;
+		width: 100%;
+		background: #ebebeb;
+		bottom: 60px;
+		padding-top: 10px;
+	    margin-top:29px;
+	    position:absolute;
+
+	}
+}
+@media all and (orientation : landscape and max-width:768px )
 {
 	.contact_space{
 		background: #ebebeb;
@@ -1987,7 +2002,7 @@ text-overflow: ellipsis;
 }
 
 /**竖屏*/
-@media all and (orientation : portrait)
+@media all and (orientation : portrait and max-width:768px )
 {
 	.contact_space{
 		background: #ebebeb;
