@@ -30,7 +30,7 @@ function showCompanyRightsReserved(divClass){
 		else{
 			$(".contact_html_info").css("position","relative");
 		}
-	});
+	});*/
 	$(window).resize(function () {//手机屏幕旋转
 		var winWidth = $(window).width();
 		var winHeight = $(window).height();//手机高度
@@ -41,7 +41,7 @@ function showCompanyRightsReserved(divClass){
 		else{
 			$(".contact_html_info").css("position","relative");
 		}
-	});*/
+	});
 }
 
 
