@@ -1,1 +1,66 @@
+<html>
+  <head>
+    
+    
+    <title>会员信息</title>
+    
+	<meta http-equiv="pragma" content="no-cache">
+	<meta http-equiv="cache-control" content="no-cache">
+	<meta http-equiv="expires" content="0">    
+	<meta http-equiv="keywords" content="keyword1,keyword2,keyword3">
+	<meta http-equiv="description" content="This is my page">
+	<meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no">
+ 
+  <link href="css/common.css" rel="stylesheet">
+  <script type="text/javascript" src="jquery-1.9.1.js"></script>
+  <script type="text/javascript" src="public.js"></script>
+  </head>
+   
+  
+  
 
+ 
+  <body>
+  <div class="member_info">
+    <div class="member_info_header">
+		<div class="head_show">
+			<img src="http://wx.qlogo.cn/mmopen/0nmmhb6yqExPYrWvibm2Stn4JkdObD7uibh7T7e79icTia3IfluM0aPGsdopibEt9wvVRG9NiaO2RianYHnibzA2GXbYODDicemSdmf4E/0" width="60" height="60">
+			<span class="name">雨后彩虹</span>
+		</div>
+	</div>
+	<div class="member_info_one phone" onclick="window.location.href='/WeixinProject/weixin/member/phone.jsp?openId=omA_wsnhCU1l4qZlfibLR5O_ql1c'">绑定手机(139****2921)</div>
+	<div class="member_info_two info" onclick="inputMemberInfo('omA_wsnhCU1l4qZlfibLR5O_ql1c')">完善会员信息</div>
+	<div class="member_info_space_one"></div>
+	<div class="member_info_one problem" onclick="window.location.href='/WeixinProject/weixin/member/commonproblems.jsp'">常见问题</div>
+	<div class="member_info_two contact" onclick="window.location.href='/WeixinProject/weixin/member/contact.jsp'">关于我们</div>
+	<div class="member_info_space_two"></div>
+	<div class="contact_html_info" style="position: absolute;">如泰科技©2017 All Rights Reserved</div>
+     <div class="footer">
+		<ul>
+			<li class="border">
+			 <a href="/WeixinProject/weixin/preferential/openpreferential.jsp">附近优惠</a>
+			 </li>
+			 <li class="border">
+				<a href="/WeixinProject/weixin/cardvoucher/opencardvoucher.jsp">我的卡券</a>
+			 </li>
+			<li class="select">
+				<a><span>会员信息</span></a>
+				<dl class="display" style="display: none;">
+					<dd><a href="/WeixinProject/weixin/app/app.jsp">下载APP</a></dd>
+					<dd class="none_background" style="background: none;"><a href="/WeixinProject/weixin/member/openmember.jsp">会员信息</a></dd>
+				</dl>
+			</li>
+		</ul>
+	</div>
+  </div>
+<script type="text/javascript">
+
+
+$(document).ready(function(){
+	showCompanyRightsReserved("member_info");
+})
+
+</script>  
+
+
+</body></html>
