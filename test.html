@@ -104,10 +104,12 @@
 		if($(".rule_info").hasClass("display")){
 			$(".rule_info").removeClass("display").addClass("show");
 			$(".rule").removeClass("right_arrow").addClass("down_arrow");
+			showBottom();
 		}
 		else{
 			$(".rule_info").removeClass("show").addClass("display");
 			$(".rule").removeClass("down_arrow").addClass("right_arrow");
+			showBottom();
 		}
 	});  
 	
