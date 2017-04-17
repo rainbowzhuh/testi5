@@ -20,7 +20,7 @@ $(document).ready(function(){
 
 
 function showCompanyRightsReserved(divClass){
-	/*$(window).load(function () {//页面加载
+	$(window).load(function () {//页面加载
 		var winWidth = $(window).width();
 		var winHeight = $(window).height();//手机高度
 		var htmlHeight = $("."+divClass).height();//页面html高度
@@ -30,7 +30,7 @@ function showCompanyRightsReserved(divClass){
 		else{
 			$(".contact_html_info").css("position","relative");
 		}
-	});*/
+	});
 	$(window).resize(function () {//手机屏幕旋转
 		var winWidth = $(window).width();
 		var winHeight = $(window).height();//手机高度
