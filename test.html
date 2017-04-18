@@ -11,11 +11,8 @@
 	<meta http-equiv="description" content="This is my page">
 	<meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no">
     <link href="common.css" rel="stylesheet">
-	<link href="jquery-mobile.css" rel="stylesheet">
     <script type="text/javascript" src="jquery.js"></script>
     <script type="text/javascript" src="public.js"></script>
-	<script type="text/javascript" src="jquery-mobile.js"></script>
-	<script type="text/javascript" src="cardvoucher.js"></script>
   
   </head>
 <script type="text/javascript">
@@ -42,57 +39,35 @@
   </script>
   
   <body>  
-  	 <div class="get_coupon">
-		<div class="img_show"><img src="/WeixinProject/images/merchant_img1.png"/></div>
-	    <div class="div1">
-			<div class="info">
-				<div class="merchant_name">初致美蛙火锅</div>
-				<div class="coupon_name">5元代金券</div>
-				<div class="hot">207人已领</div>
-				<div class="address"><span class="icon_point">·</span>通协路269号建滔广场B1层A01号</div>
-				<div class="time"><span class="icon_point">·</span>营业时间：10:00至次日0:00（周一至周日）</div>
-				<div class="rule right_arrow"><span class="icon_point">&nbsp;</span>使用须知</div>
-				<div class="rule_info display">
-					<div class="title">有效期</div>
-					<div class="text"><span>·</span>2017年1月1日至2017年6月1日</div>
-					<div class="title">除外日期</div>
-					<div class="text"><span>·</span>2017年1月27日至2017年2月2日</div>
-					<div class="title">使用日期</div>
-					<div class="text"><span>·</span>优惠券使用时间：10:00~次日0:00</div>
-					<div class="title">适用范围</div>
-					<div class="text"><span>·</span>除饮料、酒水、锅底、调料外均可适用</div>
-					<div class="title">预约提醒</div>
-					<div class="text"><span>·</span>无需预约，消费高峰时可能需要等位</div>
-					<div class="title">规则提醒</div>
-					<div class="text"><span>·</span>此优惠券可叠加适用，不兑现，不找零</div>
-				</div>
+  	 <div class="member_info">
+	    <div class="member_info_header">
+			<div class="head_show">
+			<input type="hidden" name="context" value="/WeixinProject">
+		    <input type="hidden" name="openId" value="omA_wsnhCU1l4qZlfibLR5O_ql1c">
+				<img src="http://wx.qlogo.cn/mmopen/0nmmhb6yqExPYrWvibm2Stn4JkdObD7uibh7T7e79icTia3IfluM0aPGsdopibEt9wvVRG9NiaO2RianYHnibzA2GXbYODDicemSdmf4E/0" width="60" height="60">
+				<span class="name">朱虹</span>
 			</div>
-			
 		</div>
-		<a href="#positionWindow" onclick="" class="get_coupon_button ui-btn ui-corner-all ui-shadow ui-btn-inline" data-rel="popup" data-position-to="window">立即领取</a>
-		<div class="coupon_text_show">
-			<label id="error">领取优惠券失败，请重新领取！</label>
-        </div>
-		
-		
-		
-		
-		
-		<div class="get_coupon_space"></div>
-		<div class="coupon_html_info">卡券科技©2017 All Rights Reserved</div>
-	    <div class="footer">
+		<div class="member_info_one phone" onclick="window.location.href='/WeixinProject/weixin/member/phone.jsp?openId=omA_wsnhCU1l4qZlfibLR5O_ql1c'">绑定手机(139****2921)</div>
+		<div class="member_info_two info" onclick="inputMemberInfo('omA_wsnhCU1l4qZlfibLR5O_ql1c')">完善会员信息</div>
+		<div class="member_info_space_one"></div>
+		<div class="member_info_one problem" onclick="window.location.href='/WeixinProject/weixin/member/commonproblems.jsp'">常见问题</div>
+		<div class="member_info_two contact" onclick="window.location.href='/WeixinProject/weixin/member/contact.jsp'">关于我们</div>
+		<div class="member_info_space_two"></div>
+		<div class="contact_html_info">如泰科技©2017 All Rights Reserved</div>
+	     <div class="footer">
 			<ul>
-			  <li class="select border">
-				<a href="/WeixinProject/weixin/preferential/openpreferential.jsp" target="_parent" class="ui-link">附近优惠</a>
-			   </li>
-			   <li class="border">
-				<a href="/WeixinProject/weixin/cardvoucher/opencardvoucher.jsp" target="_parent" class="ui-link"><span>我的卡券</span></a>
-			    </li>
-				<li class="">
-					<a class="ui-link"><span>会员信息</span></a>
+				<li class="border">
+				 <a href="/WeixinProject/weixin/preferential/openpreferential.jsp">附近优惠</a>
+				 </li>
+				 <li class="border">
+					<a href="/WeixinProject/weixin/cardvoucher/opencardvoucher.jsp">我的卡券</a>
+				 </li>
+				<li class="select">
+					<a><span>会员信息</span></a>
 					<dl class="display" style="display: none;">
-						<dd><a href="/WeixinProject/weixin/app/app.jsp" target="_parent" class="ui-link">下载APP</a></dd>
-						<dd class="none_background" style="background: none;"><a href="/WeixinProject/weixin/member/openmember.jsp" target="_parent" class="ui-link">会员信息</a></dd>
+						<dd><a href="/WeixinProject/weixin/app/app.jsp">下载APP</a></dd>
+						<dd class="none_background" style="background: none;"><a href="/WeixinProject/weixin/member/openmember.jsp">会员信息</a></dd>
 					</dl>
 				</li>
 			</ul>
@@ -100,51 +75,15 @@
 	  </div>
   </body>
  <script type="text/javascript">
-	$(".rule").click(function(){
-		if($(".rule_info").hasClass("display")){
-			$(".rule_info").removeClass("display").addClass("show");
-			$(".rule").removeClass("right_arrow").addClass("down_arrow");
-			showBottom();
-		}
-		else{
-			$(".rule_info").removeClass("show").addClass("display");
-			$(".rule").removeClass("down_arrow").addClass("right_arrow");
-			$(".coupon_html_info").removeAttr("style");
-		}
-	});  
 	
-	$(document).ready(function(){
-		showCompanyRightsReservedCoupon("get_coupon");	
-	})
-	
+function inputMemberInfo(openId){
+ window.location ="/WeixinProject/weixin/member.do?mhd=memberInfoList&openId="+openId;
+}
 
-//发送验证码
-document.getElementById("btn").onclick=function(){
-var myreg = /^(((13[0-9]{1})|(15[0-9]{1})|(18[0-9]{1}))+\d{8})$/; 
-var phone=$("#phone").val();
-var openId = document.forms[0].elements["vo.openId"].value;
-if(!myreg.test(phone)){ 
-  document.getElementById("error").innerText="请输入有效的手机号码!";
-  return false; 
- }else{
- PhoneValid(phone,openId);
- time(this);
- }
+$(document).ready(function(){
+	showCompanyRightsReserved("member_info");
+})
 
-} 
-   
-function showBottom(){
-		var winWidth = $(window).width();
-		var winHeight = $(window).height();//手机高度
-		var htmlHeight = $(".get_coupon").height();//页面html高度
-		if(winHeight - htmlHeight <= 0){
-			$(".coupon_html_info").css("position","relative");
-		}
-		else{
-			$(".coupon_html_info").css("position","absolute");
-		}
-	}
-	
 
   </script>
 </html>
