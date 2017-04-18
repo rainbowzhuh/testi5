@@ -32,6 +32,7 @@ function showCompanyRightsReserved(divClass){
 		}
 	});
 	$(window).resize(function () {//手机屏幕旋转
+		window.scrollTo(0,0);
 		var winWidth = $(window).width();
 		var winHeight = $(window).height();//手机高度
 		var htmlHeight = $("."+divClass).height();//页面html高度
