@@ -39,46 +39,56 @@
   </script>
   
   <body>  
-  	<div class="phone_html">
-	<form action="" method="post">
-		<div class="phone_one">
-			<label>手机号码</label>
-			<input type="text" name="phone" id="phone" class="phone_input" maxlength="11" placeholder="请输入手机号码" onblur="phoneerror()">
-			 <input type="hidden" name="openId" id="openId" value="omA_wsnhCU1l4qZlfibLR5O_ql1c">
-			<input type="button" name="" value="获取验证码" id="btn" class="phone_valid">
+  	<div class="my_card">
+		<div class="my_card_button">
+<a href="javascript:window.location.href='/WeixinProject/weixin/cardvoucher.do?mhd=toList&amp;openId=omA_wsnhCU1l4qZlfibLR5O_ql1c'" class="button_select ui-link">优惠券</a>
+			<a href="javascript:void(0)" class="select button_select ui-link">会员卡</a>
+			<input type="hidden" name="fullContext" value="http://www.rutaicloud.com:80/WeixinProject/">
+		    <input type="hidden" name="openId" value="omA_wsnhCU1l4qZlfibLR5O_ql1c">
+		    <input type="hidden" name="context" value="/WeixinProject">
 		</div>
-		<div class="phone_two">
-			<label>验证码</label>
-			<input type="text" name="phonevalid" id="phonevalid" class="phone_input" maxlength="6" placeholder="请输入验证码" onblur="phonevaliderror()">
+	
+
+
+		
+		<div class="show_card_coupon">
+			<div class="card_show">
+				<div class="card_erweima">
+					<a href="javascript:openPopup('123400000145','card')" class="ui-btn ui-corner-all ui-shadow ui-btn-inline link" data-rel="popup" data-position-to="window" aria-haspopup="true" aria-owns="avascript:openPopup('123400000145','card')" aria-expanded="false">
+						<img src="/WeixinProject/images/card_erweima.png">
+					</a>	
+				</div>
+				<div style="display: none;" id="erweima-placeholder"><!-- placeholder for erweima --></div>
+				<div class="card_show_div1" onclick="toDetail('123400000145','上海浦东新区盛夏路益江路286号','15900948191','15:00-17:00','hhhhhhh','801310060120001','华英集团','null','merchant/20161219/801110057180002.jpg')">
+					<div class="card_name">华英集团</div>
+					<div class="card_title"><span>商户积分卡</span></div>
+					<div class="card_no"><span>卡号：123400000145</span></div>
+				</div>
+			</div>
 		</div>
-		<div class="phone_text_show">
-	  <label id="error"> </label> 
-	    
-         </div>
-		<div class="phone_button_submit"><input type="button" name="" value="确&nbsp;&nbsp;&nbsp;定" class="phone_submit" onclick="phone_submit()"></div>
-	   
-	   
-	</form>
-	<div class="phone_space"></div>
-	<div class="contact_html_info">如泰科技©2017 All Rights Reserved</div>
-    <div class="footer">
-		<ul>
-			<li class="border">
-				<a href="/WeixinProject/weixin/preferential/openpreferential.jsp">附近优惠</a>
-			 </li>
-			 <li class="border">
-				<a href="/WeixinProject/weixin/cardvoucher/opencardvoucher.jsp">我的卡券</a>
-			 </li>
-			<li class="select">
-				<a><span>会员信息</span></a>
-				<dl class="display" style="display: none;">
-					<dd><a href="/WeixinProject/weixin/app/app.jsp">下载APP</a></dd>
-					<dd class="none_background" style="background: none;"><a href="/WeixinProject/weixin/member/openmember.jsp">会员信息</a></dd>
-				</dl>
-			</li>
-		</ul>
-	</div>
-  </div>
+	
+ 
+		
+		<div class="card_coupon_space"></div>
+		<div class="contact_html_info">如泰科技©2017 All Rights Reserved</div>
+	    <div class="footer">
+			<ul>
+			  <li class="border">
+				<a href="/WeixinProject/weixin/preferential/openpreferential.jsp" target="_parent" class="ui-link">附近优惠</a>
+			   </li>
+			   <li class="border select">
+				<a href="/WeixinProject/weixin/cardvoucher/opencardvoucher.jsp" target="_parent" class="ui-link"><span>我的卡券</span></a>
+			    </li>
+				<li class="">
+					<a class="ui-link"><span>会员信息</span></a>
+					<dl class="display" style="display: block;">
+						<dd><a href="/WeixinProject/weixin/app/app.jsp" target="_parent" class="ui-link">下载APP</a></dd>
+						<dd class="none_background" style="background: none;"><a href="/WeixinProject/weixin/member/openmember.jsp" target="_parent" class="ui-link">会员信息</a></dd>
+					</dl>
+				</li>
+			</ul>
+		</div>
+	  </div>
   </body>
  <script type="text/javascript">
 	
