@@ -34,6 +34,7 @@ function showCompanyRightsReserved(divClass){
 	$(window).resize(function () {//手机屏幕旋转
 		if(winHeight < $(window).height()){
 		   winHeight = $(window).height();
+			alert(winHeight);
 		}
 		var winWidth = $(window).width();
 		var htmlHeight = $("."+divClass).height();//页面html高度
