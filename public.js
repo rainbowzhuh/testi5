@@ -24,6 +24,7 @@ function showCompanyRightsReserved(divClass){
 		var winWidth = $(window).width();
 		var winHeight = $(window).height();//手机高度
 		var htmlHeight = $("."+divClass).height();//页面html高度
+		alert(winWidth + "**" + winHeight + "**" + htmlHeight);
 		if(winHeight - htmlHeight <= 0){
 			$(".contact_html_info").css("position","relative");
 		}
@@ -36,6 +37,7 @@ function showCompanyRightsReserved(divClass){
 		var winWidth = $(window).width();
 		var winHeight = $(window).height();//手机高度
 		var htmlHeight = $("."+divClass).height();//页面html高度
+		alert(winWidth + "**" + winHeight + "**" + htmlHeight);
 		if(winHeight - htmlHeight <=0){
 			$(".contact_html_info").css("position","relative");
 		}
