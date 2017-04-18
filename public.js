@@ -24,7 +24,6 @@ function showCompanyRightsReserved(divClass){
 	$(window).load(function () {//页面加载
 		var winWidth = $(window).width();
 		var htmlHeight = $("."+divClass).height();//页面html高度
-		alert(winWidth + "**" + winHeight + "**" + htmlHeight);
 		if(winHeight - htmlHeight <= 0){
 			$(".contact_html_info").css("position","relative");
 		}
@@ -36,7 +35,6 @@ function showCompanyRightsReserved(divClass){
 		window.scrollTo(0,0);
 		var winWidth = $(window).width();
 		var htmlHeight = $("."+divClass).height();//页面html高度
-		alert(winWidth + "**" + winHeight + "**" + htmlHeight);
 		if(winHeight - htmlHeight <=0){
 			$(".contact_html_info").css("position","relative");
 		}
