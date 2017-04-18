@@ -32,7 +32,7 @@ function showCompanyRightsReserved(divClass){
 		}
 		
 		if(winWidth > winHeight){
-		   winHeight = 0;
+		   winHeight = winWidth;
 		}
 	});
 	$(window).resize(function () {//手机屏幕旋转
