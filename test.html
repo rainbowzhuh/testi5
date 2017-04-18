@@ -39,25 +39,37 @@
   </script>
   
   <body>  
-  	<div class="card_coupon">
-		<div class="card_coupon_button">
-			<a href="javascript:void(0)" class="select button_select ui-link">优惠券</a>
-			<a href="javascript:window.location.href='/WeixinProject/weixin/cardvoucher.do?mhd=toCard&amp;openId=omA_wsnhCU1l4qZlfibLR5O_ql1c'" class="button_select ui-link">会员卡</a>
+  	<div class="my_card">
+		<div class="my_card_button">
+<a href="javascript:window.location.href='/WeixinProject/weixin/cardvoucher.do?mhd=toList&amp;openId=omA_wsnhCU1l4qZlfibLR5O_ql1c'" class="button_select ui-link">优惠券</a>
+			<a href="javascript:void(0)" class="select button_select ui-link">会员卡</a>
+			<input type="hidden" name="fullContext" value="http://www.rutaicloud.com:80/WeixinProject/">
+		    <input type="hidden" name="openId" value="omA_wsnhCU1l4qZlfibLR5O_ql1c">
+		    <input type="hidden" name="context" value="/WeixinProject">
 		</div>
-		<input type="hidden" name="fullContext" value="http://www.rutaicloud.com:80/WeixinProject/">
-		<input type="hidden" name="openId" value="omA_wsnhCU1l4qZlfibLR5O_ql1c">
-	    <input type="hidden" name="context" value="/WeixinProject">
 	
-	
-	
-		<div class="none_card_coupon">
-			<div class="font">
-				<span>暂时没有可以使用的优惠券</span><br>
-				<span>快去领取一张吧</span>
-			</div>
-		</div>	
-	
+
+
 		
+		<div class="show_card_coupon">
+			<div class="card_show">
+				<div class="card_erweima">
+					<a href="javascript:openPopup('123400000145','card')" class="ui-btn ui-corner-all ui-shadow ui-btn-inline link" data-rel="popup" data-position-to="window" aria-haspopup="true" aria-owns="avascript:openPopup('123400000145','card')" aria-expanded="false">
+						<img src="/WeixinProject/images/card_erweima.png">
+					</a>	
+				</div>
+				<div style="display: none;" id="erweima-placeholder"><!-- placeholder for erweima --></div>
+				<div class="card_show_div1" onclick="toDetail('123400000145','上海浦东新区盛夏路益江路286号','15900948191','15:00-17:00','hhhhhhh','801310060120001','华英集团','null','merchant/20161219/801110057180002.jpg')">
+					<div class="card_name">华英集团</div>
+					<div class="card_title"><span>商户积分卡</span></div>
+					<div class="card_no"><span>卡号：123400000145</span></div>
+				</div>
+			</div>
+		</div>
+		
+		
+	
+ 
 		
 		<div class="card_coupon_space"></div>
 		<div class="contact_html_info">如泰科技©2017 All Rights Reserved</div>
@@ -71,7 +83,7 @@
 			    </li>
 				<li class="">
 					<a class="ui-link"><span>会员信息</span></a>
-					<dl class="display" style="display: none;">
+					<dl class="display" style="display: block;">
 						<dd><a href="/WeixinProject/weixin/app/app.jsp" target="_parent" class="ui-link">下载APP</a></dd>
 						<dd class="none_background" style="background: none;"><a href="/WeixinProject/weixin/member/openmember.jsp" target="_parent" class="ui-link">会员信息</a></dd>
 					</dl>
@@ -87,7 +99,7 @@ function inputMemberInfo(openId){
 }
 
 $(document).ready(function(){
-	showCompanyRightsReserved("card_coupon");
+	showCompanyRightsReserved("my_card");
 })
 
 
