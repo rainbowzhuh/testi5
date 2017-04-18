@@ -45,7 +45,7 @@ function showCompanyRightsReserved(divClass){
 		}
 		var winWidth = $(window).width();
 		var htmlHeight = $("."+divClass).height();//页面html高度
-		if(winHeight - htmlHeight <=0){
+		if(winHeight - htmlHeight <=0 || $(window).height() - htmlHeight <= 0){
 			$(".contact_html_info").css("position","relative");
 			
 			if(winWidth > winHeight){
